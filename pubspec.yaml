@@ -54,6 +54,7 @@ flutter:
   - assets/images/home/loading.gif
   - assets/images/home/wash_hands.png
   - assets/images/home/wear_mask.png
+  - assets/images/home/tangerang_logo.png
 
   # DIAGNOSIS
   - assets/images/diagnosis/demam.png
@@ -62,6 +63,12 @@ flutter:
   - assets/images/diagnosis/odp.png
   - assets/images/diagnosis/pdp.png
   - assets/images/diagnosis/suspect.png
+
+  # INFORMATION
+  - assets/images/information/navigation.png
+  - assets/images/information/daily.png
+  - assets/images/information/global.png
+  - assets/images/information/loading.gif
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

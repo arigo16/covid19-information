@@ -8,6 +8,10 @@ import 'package:covid_in/page/utilities/constant.dart';
 
 import 'package:covid_in/page/widget/counter.dart';
 
+import 'package:covid_in/page/parent/information/information_indonesia.dart';
+import 'package:covid_in/page/parent/information/information_daily.dart';
+import 'package:covid_in/page/parent/information/information_global.dart';
+import 'package:covid_in/page/parent/information/information_tangerang.dart';
 import 'package:covid_in/page/parent/diagnosis/diagnosis.dart';
 
 import 'package:covid_in/api/home_api.dart';
@@ -65,6 +69,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final numFormatter = new NumberFormat("#,###");
     var dateFormat = new DateFormat('dd MMMM');
     var dateTimeFormat = new DateFormat('dd MMMM (H:mm WIB)');
     var size = MediaQuery.of(context).size;
@@ -116,6 +121,83 @@ class _HomePageState extends State<HomePage> {
               number: dataIndonesia['update']['total']['jumlah_sembuh'],
               title: "Sembuh",
             ),
+          ],
+        );
+      }
+    }
+
+    Widget counterDataSpesimen() {
+      if (this.isFetchIndonesia == true) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Image.asset(
+              "assets/images/home/loading.gif",
+              height: 50,
+            ),
+            Image.asset(
+              "assets/images/home/loading.gif",
+              height: 50,
+            ),
+            Image.asset(
+              "assets/images/home/loading.gif",
+              height: 50,
+            ),
+            Image.asset(
+              "assets/images/home/loading.gif",
+              height: 50,
+            ),
+          ],
+        );
+      } else {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  numFormatter.format(dataIndonesia['data']['total_spesimen']),
+                  style: TextStyle(
+                      color: kInfectedColor, fontSize: size.width / 22),
+                ),
+                Text("Spesimen", style: kSubTextStyle),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  numFormatter.format(dataIndonesia['data']['jumlah_odp']),
+                  style:
+                      TextStyle(color: kDeathColor, fontSize: size.width / 22),
+                ),
+                Text("ODP", style: kSubTextStyle),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  numFormatter.format(dataIndonesia['data']['jumlah_pdp']),
+                  style:
+                      TextStyle(color: kCarecolor, fontSize: size.width / 22),
+                ),
+                Text("PDP", style: kSubTextStyle),
+              ],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Text(
+                  numFormatter
+                      .format(dataIndonesia['data']['total_spesimen_negatif']),
+                  style: TextStyle(
+                      color: kRecovercolor, fontSize: size.width / 22),
+                ),
+                Text("Negatif", style: kSubTextStyle),
+              ],
+            )
           ],
         );
       }
@@ -443,11 +525,21 @@ class _HomePageState extends State<HomePage> {
                               ),
                             ),
                             Spacer(),
-                            Text(
-                              "Lihat detail",
-                              style: TextStyle(
-                                color: kPrimaryColor,
-                                fontWeight: FontWeight.w600,
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          InformationIndonesiaPage()),
+                                );
+                              },
+                              child: Text(
+                                "Lihat detail",
+                                style: TextStyle(
+                                  color: kPrimaryColor,
+                                  fontWeight: FontWeight.w600,
+                                ),
                               ),
                             ),
                           ],
@@ -458,6 +550,37 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ),
               ],
+            ),
+
+            // ODP ATAU PDP
+            Container(
+              child: Container(
+                padding: EdgeInsets.all(20),
+                margin: EdgeInsets.only(
+                  top: 20,
+                  left: 10,
+                  right: 10,
+                ),
+                width: size.width,
+                // height: size.height / 4.5,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                        blurRadius: 5,
+                        spreadRadius: 2.0,
+                        color: colorPrimary.withOpacity(.12))
+                  ],
+                  gradient: LinearGradient(
+                    colors: [Color(0xFFebeef5), Colors.white],
+                    begin: Alignment(-1.0, -2.0),
+                    end: Alignment(1.0, 2.0),
+                  ),
+                ),
+                child: counterDataSpesimen(),
+              ),
             ),
 
             // CARD DATA HARIAN INDONESIA
@@ -495,11 +618,21 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           dateLastIndonesiaDaily(),
                           Spacer(),
-                          Text(
-                            "Lihat detail",
-                            style: TextStyle(
-                              color: kPrimaryColor,
-                              fontWeight: FontWeight.w600,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        InformationDailyPage()),
+                              );
+                            },
+                            child: Text(
+                              "Lihat detail",
+                              style: TextStyle(
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                         ],
@@ -546,17 +679,99 @@ class _HomePageState extends State<HomePage> {
                         children: <Widget>[
                           dateLastGlobal(),
                           Spacer(),
-                          Text(
-                            "Lihat detail",
-                            style: TextStyle(
-                              color: kPrimaryColor,
-                              fontWeight: FontWeight.w600,
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        InformationGlobalPage()),
+                              );
+                            },
+                            child: Text(
+                              "Lihat detail",
+                              style: TextStyle(
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.w600,
+                              ),
                             ),
                           ),
                         ],
                       ),
                     ),
                     counterDataGlobal(),
+                  ],
+                ),
+              ),
+            ),
+
+            // Data Kota Tangerang
+            Container(
+              child: Container(
+                padding: EdgeInsets.all(20),
+                margin: EdgeInsets.only(
+                  top: 20,
+                  left: 10,
+                  right: 10,
+                ),
+                width: size.width,
+                // height: size.height / 4.5,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                        blurRadius: 5,
+                        spreadRadius: 2.0,
+                        color: colorPrimary.withOpacity(.12))
+                  ],
+                  gradient: LinearGradient(
+                    colors: [Color(0xFFebeef5), Colors.white],
+                    begin: Alignment(-1.0, -2.0),
+                    end: Alignment(1.0, 2.0),
+                  ),
+                ),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                      width: 50,
+                      margin: EdgeInsets.only(right: 20),
+                      child:
+                          Image.asset("assets/images/home/tangerang_logo.png"),
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Text("Data Kota Tangerang", style: kTitleTextstyle),
+                        Text(
+                          "Kini tersedia rincian data kota tangerang",
+                          style: TextStyle(
+                            color: kTextLightColor,
+                          ),
+                        ),
+                        Container(
+                          margin: EdgeInsets.only(top: 5),
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        InformasionTangerangPage()),
+                              );
+                            },
+                            child: Text(
+                              "Lihat detail",
+                              style: TextStyle(
+                                color: kPrimaryColor,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    )
                   ],
                 ),
               ),
