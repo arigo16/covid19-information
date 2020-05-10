@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 
-import 'package:covid_in/page/parent/parent.dart';
+import 'package:covid_in/page/parent/home/home.dart';
 
 import 'package:covid_in/page/utilities/color.dart';
 
@@ -26,7 +26,7 @@ class FadeIn extends State<SplashScreen> {
   }
 
   onDoneLoading() async {
-    Navigator.pushReplacementNamed(context, ParentPage.routeName);
+    Navigator.pushReplacementNamed(context, HomePage.routeName);
   }
 
   @override

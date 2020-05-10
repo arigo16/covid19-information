@@ -1,13 +1,13 @@
+import 'package:covid_in/page/parent/home/home.dart';
 import 'package:flutter/material.dart';
 
 import 'package:covid_in/page/splash/splash.dart';
-import 'package:covid_in/page/parent/parent.dart';
 
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   final routes = <String, WidgetBuilder>{
-    ParentPage.routeName: (context) => ParentPage()
+    HomePage.routeName: (context) => HomePage()
   };
 
   @override

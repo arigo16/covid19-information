@@ -68,6 +68,10 @@ class _ParentPageState extends State<ParentPage> {
               icon: Icon(Icons.book),
               activeColor: colorPrimary),
           BottomNavyBarItem(
+              title: Text('Uji Covid19'),
+              icon: Icon(Icons.favorite),
+              activeColor: colorPrimary),
+          BottomNavyBarItem(
               title: Text('Pengaturan'),
               icon: Icon(Icons.settings),
               activeColor: colorPrimary),
