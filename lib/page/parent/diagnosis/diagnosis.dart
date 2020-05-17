@@ -25,17 +25,17 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
   var desc = "";
 
   var descNormal =
-      "Anda tidak ada gejala kelainan berat apapun. Begitu pula tidak ada kondisi yang menyebabkan Anda perlu dipantau perkembangan kesehatannya akibat wabah COVID-19.";
+      "You have no symptoms of any serious disorder. Likewise there are no conditions that cause you to be monitored for their health development due to the COVID-19 outbreak.";
   var descDemam =
-      "Anda memiliki gejala demam namun tidak ada tanda bahwa anda terpapar virus COVID-19. Tetap isolasi diri Anda hingga sembuh dan lakukan social distancing.";
+      "You have symptoms of fever but there is no sign that you are exposed to the COVID-19 virus. Keep yourself isolated until healed and do social distancing.";
   var descOTG =
-      "Anda (Orang Tanpa Gejala) tidak memiliki gejala yang terjadi pada wabah COVID-19. Namun anda memiliki riwayat berkunjung kedaerah yang terpapar virus COVID-19. Isolasi diri Anda dan lakukan social distancing minimal 14 hari.";
+      "You (Person Without Symptoms) do not have symptoms that occur in the COVID-19 outbreak. However, you have a history of regional visits exposed to the COVID-19 virus. Isolate yourself and do social distancing for at least 14 days.";
   var descODP =
-      "Anda (Orang Dalam Pemantauan) tidak memiliki gejala yang terjadi pada wabah COVID-19. Namun anda memiliki riwayat kontak langsung dengan suspect virus COVID-19 segera isolasi diri Anda dan kunjungi RS Rujukan COVID-19 terdekat.";
+      "You (Person In Monitoring) do not have symptoms that occur in the COVID-19 outbreak. But you have a history of direct contact with suspect COVID-19 virus, isolate yourself immediately and visit the nearest COVID-19 Referral Hospital.";
   var descPDP =
-      "Anda (Pasien Dalam Pengawasan) memiliki beberapa gejala yang mirip terjadi pada wabah COVID-19. kemungkinan besar anda terpapar virus COVID-19 segera isolasi diri Anda dan kunjungi RS Rujukan COVID-19 terdekat.";
+      "You (Patient Under Supervision) have several symptoms that are similar to the outbreak of COVID-19. you are most likely to be exposed to the COVID-19 virus and immediately isolate yourself and visit the nearest COVID-19 Referral Hospital.";
   var descSuspect =
-      "Anda diduga memiliki semua gejala yang mirip terjadi pada wabah COVID-19. kemungkinan besar anda terpapar virus COVID-19 segera isolasi diri Anda dan kunjungi RS Rujukan COVID-19 terdekat.";
+      "You are suspected of having all the similar symptoms that occurred in the COVID-19 outbreak. you are most likely to be exposed to the COVID-19 virus and immediately isolate yourself and visit the nearest COVID-19 Referral Hospital.";
 
   @override
   void initState() {
@@ -108,7 +108,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                     Container(
                       padding: EdgeInsets.all(20),
                       child: Text(
-                        "Apakah anda mengalami ganggunan pernafasan yang cukup berat ?",
+                        "Do you experience severe respiratory distress ?",
                         textAlign: TextAlign.center,
                         style: TextStyle(
                           fontSize: size.width / 20,
@@ -142,7 +142,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                                   : Color(0xFFdfdfdf),
                             ),
                             child: Text(
-                              "Ya",
+                              "Yes",
                               style: TextStyle(fontSize: size.width / 18),
                               textAlign: TextAlign.center,
                             ),
@@ -171,7 +171,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                                   : Color(0xFFdfdfdf),
                             ),
                             child: Text(
-                              "Tidak",
+                              "No",
                               style: TextStyle(fontSize: size.width / 18),
                               textAlign: TextAlign.center,
                             ),
@@ -221,7 +221,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                         } else if (this.dataG04 == "N") {
                           // Kedua
                           setState(() {
-                            this.title = "PDP";
+                            this.title = "PUS";
                             this.desc = descPDP;
                             this.image = "assets/images/diagnosis/pdp.png";
                             this.isResult = true;
@@ -230,7 +230,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                       } else if (this.dataG03 == "N") {
                         // Ketiga
                         setState(() {
-                          this.title = "ODP";
+                          this.title = "PIM";
                           this.desc = descODP;
                           this.image = "assets/images/diagnosis/odp.png";
                           this.isResult = true;
@@ -241,7 +241,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                         if (this.dataG04 == "Y") {
                           // Keempat
                           setState(() {
-                            this.title = "PDP";
+                            this.title = "PUS";
                             this.desc = descPDP;
                             this.image = "assets/images/diagnosis/pdp.png";
                             this.isResult = true;
@@ -249,7 +249,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                         } else if (this.dataG04 == "N") {
                           // Kelima
                           setState(() {
-                            this.title = "ODP";
+                            this.title = "PIM";
                             this.desc = descODP;
                             this.image = "assets/images/diagnosis/odp.png";
                             this.isResult = true;
@@ -258,7 +258,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                       } else if (this.dataG03 == "N") {
                         // Keenam
                         setState(() {
-                          this.title = "OTG";
+                          this.title = "PWS";
                           this.desc = descOTG;
                           this.image = "assets/images/diagnosis/otg.png";
                           this.isResult = true;
@@ -279,7 +279,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                         } else if (this.dataG04 == "N") {
                           // Kedelapan
                           setState(() {
-                            this.title = "PDP";
+                            this.title = "PUS";
                             this.desc = descPDP;
                             this.image = "assets/images/diagnosis/pdp.png";
                             this.isResult = true;
@@ -288,7 +288,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                       } else if (this.dataG03 == "N") {
                         // Kesembilan
                         setState(() {
-                          this.title = "ODP";
+                          this.title = "PIM";
                           this.desc = descODP;
                           this.image = "assets/images/diagnosis/odp.png";
                           this.isResult = true;
@@ -299,7 +299,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                         if (this.dataG04 == "Y") {
                           // Kesepuluh
                           setState(() {
-                            this.title = "PDP";
+                            this.title = "PUS";
                             this.desc = descPDP;
                             this.image = "assets/images/diagnosis/pdp.png";
                             this.isResult = true;
@@ -307,7 +307,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                         } else if (this.dataG04 == "N") {
                           // Kesebelas
                           setState(() {
-                            this.title = "DEMAM";
+                            this.title = "FEVER";
                             this.desc = descDemam;
                             this.image = "assets/images/diagnosis/demam.png";
                             this.isResult = true;
@@ -326,7 +326,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                   }
                 },
                 child: new Text(
-                  "Proses Diagnosa",
+                  "See Result",
                   style: new TextStyle(
                       fontSize: size.width / 20,
                       color: Colors.white,
@@ -350,7 +350,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
               child: RaisedButton(
                 onPressed: () {},
                 child: new Text(
-                  "Proses Diagnosa",
+                  "See Result",
                   style: new TextStyle(
                       fontSize: size.width / 20,
                       color: Colors.white,
@@ -379,7 +379,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                 });
               },
               child: new Text(
-                "Ubah Jawaban",
+                "Change Answer",
                 style: new TextStyle(
                     fontSize: size.width / 20,
                     color: Colors.white,
@@ -427,7 +427,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                     padding: EdgeInsets.only(top: 20),
                     alignment: Alignment(0.0, 0.0),
                     child: Text(
-                      "JAWAB PERTANYAAN",
+                      "ANSWER A QUESTION",
                       style: TextStyle(
                         fontSize: size.width / header,
                         color: Colors.white,
@@ -465,7 +465,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                           Container(
                             padding: EdgeInsets.all(20),
                             child: Text(
-                              "Apakah anda pernah bepergian ke kota atau negara yang terpapar virus COVID-19 ?",
+                              "Have you ever traveled to a city or country that was exposed to the COVID-19 virus ?",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: size.width / 20,
@@ -499,7 +499,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                                         : Color(0xFFdfdfdf),
                                   ),
                                   child: Text(
-                                    "Ya",
+                                    "Yes",
                                     style: TextStyle(fontSize: size.width / 18),
                                     textAlign: TextAlign.center,
                                   ),
@@ -528,7 +528,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                                         : Color(0xFFdfdfdf),
                                   ),
                                   child: Text(
-                                    "Tidak",
+                                    "No",
                                     style: TextStyle(fontSize: size.width / 18),
                                     textAlign: TextAlign.center,
                                   ),
@@ -572,7 +572,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                           Container(
                             padding: EdgeInsets.all(20),
                             child: Text(
-                              "Apakah anda pernah kontak langsung dengan orang yang terinfeksi virus COVID-19 ?",
+                              "Have you ever been in direct contact with someone infected with the COVID-19 virus ?",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: size.width / 20,
@@ -606,7 +606,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                                         : Color(0xFFdfdfdf),
                                   ),
                                   child: Text(
-                                    "Ya",
+                                    "Yes",
                                     style: TextStyle(fontSize: size.width / 18),
                                     textAlign: TextAlign.center,
                                   ),
@@ -635,7 +635,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                                         : Color(0xFFdfdfdf),
                                   ),
                                   child: Text(
-                                    "Tidak",
+                                    "No",
                                     style: TextStyle(fontSize: size.width / 18),
                                     textAlign: TextAlign.center,
                                   ),
@@ -680,7 +680,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                           Container(
                             padding: EdgeInsets.all(20),
                             child: Text(
-                              "Apakah anda mengalami demam dengan suhu tubuh mencapai 38 derajat Celcius ?",
+                              "Do you have a fever with body temperature reaching 38 degrees Celsius or more ?",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: size.width / 20,
@@ -715,7 +715,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                                         : Color(0xFFdfdfdf),
                                   ),
                                   child: Text(
-                                    "Ya",
+                                    "Yes",
                                     style: TextStyle(fontSize: size.width / 18),
                                     textAlign: TextAlign.center,
                                   ),
@@ -745,7 +745,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                                         : Color(0xFFdfdfdf),
                                   ),
                                   child: Text(
-                                    "Tidak",
+                                    "No",
                                     style: TextStyle(fontSize: size.width / 18),
                                     textAlign: TextAlign.center,
                                   ),
@@ -806,7 +806,7 @@ class _DiagnosisPageState extends State<DiagnosisPage> {
                     width: size.width / 1.5,
                     margin: EdgeInsets.only(top: 30),
                     child: Text(
-                      "Hasil diagnosa ini hanya berupa perkiraan kami tidak menyarankan Anda untuk percaya sepenuhnya dengan hasil diagnosa ini. Untuk hasil yang lebih baik kami menyarankan untuk melakukan pemeriksaan virus COVID-19 secara langsung.",
+                      "The results of this diagnosis are only estimates. We do not recommend that you fully trust the results of this diagnosis. For better results we recommend checking the COVID-19 virus directly.",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: size.width / 40,

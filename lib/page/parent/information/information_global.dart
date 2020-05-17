@@ -78,17 +78,17 @@ class _InformationGlobalPageState extends State<InformationGlobalPage> {
             Counter(
               color: kInfectedColor,
               number: dataGlobal['Global']['TotalConfirmed'],
-              title: "Positif",
+              title: "Infected",
             ),
             Counter(
               color: kDeathColor,
               number: dataGlobal['Global']['TotalDeaths'],
-              title: "Meninggal",
+              title: "Died",
             ),
             Counter(
               color: kRecovercolor,
               number: dataGlobal['Global']['TotalRecovered'],
-              title: "Sembuh",
+              title: "Recovered",
             ),
           ],
         );
@@ -101,11 +101,11 @@ class _InformationGlobalPageState extends State<InformationGlobalPage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Data Global\n",
+                text: "Global Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
-                text: "Sedang memuat data mohon tunggu",
+                text: "processing, please wait a minutes",
                 style: TextStyle(
                   color: kTextLightColor,
                 ),
@@ -118,11 +118,11 @@ class _InformationGlobalPageState extends State<InformationGlobalPage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Data Global\n",
+                text: "Global Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
-                text: "Update pada " +
+                text: "Last update data on " +
                     dateTimeFormat.format(DateTime.parse(dataGlobal['Date'])),
                 style: TextStyle(
                   color: kTextLightColor,
@@ -174,9 +174,9 @@ class _InformationGlobalPageState extends State<InformationGlobalPage> {
                   Text(country,
                       overflow: TextOverflow.ellipsis, style: kTitleTextstyle),
                   Text(
-                    "Sembuh " +
+                    "Recovered " +
                         (numFormatter.format(sembuh)).toString() +
-                        " dan Meninggal " +
+                        " and Died " +
                         (numFormatter.format(meninggal)).toString(),
                     style: TextStyle(
                       color: kInfectedColor,
@@ -185,7 +185,7 @@ class _InformationGlobalPageState extends State<InformationGlobalPage> {
                   Container(
                     margin: EdgeInsets.only(top: 5),
                     child: Text(
-                      "Total Positif " +
+                      "Total Infected " +
                           (numFormatter.format(positif)).toString(),
                       style: TextStyle(
                         color: kPrimaryColor,

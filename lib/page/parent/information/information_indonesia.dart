@@ -98,22 +98,22 @@ class _InformationIndonesiaPageState extends State<InformationIndonesiaPage> {
             Counter(
               color: kInfectedColor,
               number: dataIndonesia['update']['total']['jumlah_positif'],
-              title: "Positif",
+              title: "Infected",
             ),
             Counter(
               color: kDeathColor,
               number: dataIndonesia['update']['total']['jumlah_meninggal'],
-              title: "Meninggal",
+              title: "Died",
             ),
             Counter(
               color: kCarecolor,
               number: dataIndonesia['update']['total']['jumlah_dirawat'],
-              title: "Dirawat",
+              title: "Treated",
             ),
             Counter(
               color: kRecovercolor,
               number: dataIndonesia['update']['total']['jumlah_sembuh'],
-              title: "Sembuh",
+              title: "Recovered",
             ),
           ],
         );
@@ -160,16 +160,16 @@ class _InformationIndonesiaPageState extends State<InformationIndonesiaPage> {
                   Text(city,
                       overflow: TextOverflow.ellipsis, style: kTitleTextstyle),
                   Text(
-                    "Sembuh " +
+                    "Recovered " +
                         (numFormatter.format(sembuh)).toString() +
-                        " dan Dirawat " +
+                        " and Treated " +
                         (numFormatter.format(dirawat)).toString(),
                     style: TextStyle(
                       color: kInfectedColor,
                     ),
                   ),
                   Text(
-                    "Meninggal " + (numFormatter.format(meninggal)).toString(),
+                    "Died " + (numFormatter.format(meninggal)).toString(),
                     style: TextStyle(
                       color: kInfectedColor,
                     ),
@@ -177,7 +177,7 @@ class _InformationIndonesiaPageState extends State<InformationIndonesiaPage> {
                   Container(
                     margin: EdgeInsets.only(top: 5),
                     child: Text(
-                      "Total Kasus " + (numFormatter.format(total)).toString(),
+                      "Total Cases " + (numFormatter.format(total)).toString(),
                       style: TextStyle(
                         color: kPrimaryColor,
                         fontWeight: FontWeight.w600,
@@ -267,11 +267,11 @@ class _InformationIndonesiaPageState extends State<InformationIndonesiaPage> {
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: "Data Indonesia\n",
+                                          text: "Indonesian Data\n",
                                           style: kTitleTextstyle,
                                         ),
                                         TextSpan(
-                                          text: "Total seluruh data indonesia",
+                                          text: "Total of all Indonesian data",
                                           style: TextStyle(
                                             color: kTextLightColor,
                                           ),

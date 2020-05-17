@@ -104,22 +104,22 @@ class _HomePageState extends State<HomePage> {
             Counter(
               color: kInfectedColor,
               number: dataIndonesia['update']['total']['jumlah_positif'],
-              title: "Positif",
+              title: "Infected",
             ),
             Counter(
               color: kDeathColor,
               number: dataIndonesia['update']['total']['jumlah_meninggal'],
-              title: "Meninggal",
+              title: "Died",
             ),
             Counter(
               color: kCarecolor,
               number: dataIndonesia['update']['total']['jumlah_dirawat'],
-              title: "Dirawat",
+              title: "Treated",
             ),
             Counter(
               color: kRecovercolor,
               number: dataIndonesia['update']['total']['jumlah_sembuh'],
-              title: "Sembuh",
+              title: "Recovered",
             ),
           ],
         );
@@ -161,7 +161,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                       color: kInfectedColor, fontSize: size.width / 22),
                 ),
-                Text("Spesimen", style: kSubTextStyle),
+                Text("Specimen", style: kSubTextStyle),
               ],
             ),
             Column(
@@ -172,7 +172,7 @@ class _HomePageState extends State<HomePage> {
                   style:
                       TextStyle(color: kDeathColor, fontSize: size.width / 22),
                 ),
-                Text("ODP", style: kSubTextStyle),
+                Text("PIM", style: kSubTextStyle),
               ],
             ),
             Column(
@@ -183,7 +183,7 @@ class _HomePageState extends State<HomePage> {
                   style:
                       TextStyle(color: kCarecolor, fontSize: size.width / 22),
                 ),
-                Text("PDP", style: kSubTextStyle),
+                Text("PUS", style: kSubTextStyle),
               ],
             ),
             Column(
@@ -195,7 +195,7 @@ class _HomePageState extends State<HomePage> {
                   style: TextStyle(
                       color: kRecovercolor, fontSize: size.width / 22),
                 ),
-                Text("Negatif", style: kSubTextStyle),
+                Text("Negative", style: kSubTextStyle),
               ],
             )
           ],
@@ -233,22 +233,22 @@ class _HomePageState extends State<HomePage> {
             Counter(
               color: kInfectedColor,
               number: dataIndonesia['update']['penambahan']['jumlah_positif'],
-              title: "Positif",
+              title: "Infected",
             ),
             Counter(
               color: kDeathColor,
               number: dataIndonesia['update']['penambahan']['jumlah_meninggal'],
-              title: "Meninggal",
+              title: "Died",
             ),
             Counter(
               color: kCarecolor,
               number: dataIndonesia['update']['penambahan']['jumlah_dirawat'],
-              title: "Dirawat",
+              title: "Treated",
             ),
             Counter(
               color: kRecovercolor,
               number: dataIndonesia['update']['penambahan']['jumlah_sembuh'],
-              title: "Sembuh",
+              title: "Recovered",
             ),
           ],
         );
@@ -281,17 +281,17 @@ class _HomePageState extends State<HomePage> {
             Counter(
               color: kInfectedColor,
               number: dataGlobal['Global']['TotalConfirmed'],
-              title: "Positif",
+              title: "Infected",
             ),
             Counter(
               color: kDeathColor,
               number: dataGlobal['Global']['TotalDeaths'],
-              title: "Meninggal",
+              title: "Died",
             ),
             Counter(
               color: kRecovercolor,
               number: dataGlobal['Global']['TotalRecovered'],
-              title: "Sembuh",
+              title: "Recovered",
             ),
           ],
         );
@@ -304,11 +304,11 @@ class _HomePageState extends State<HomePage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Harian Indonesia\n",
+                text: "Daily Indonesian Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
-                text: "Sedang memuat data mohon tunggu",
+                text: "processing, please wait a minutes",
                 style: TextStyle(
                   color: kTextLightColor,
                 ),
@@ -321,11 +321,11 @@ class _HomePageState extends State<HomePage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Harian Indonesia\n",
+                text: "Daily Indonesian Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
-                text: "Penambahan terakhir pada " +
+                text: "Adding the latest data on " +
                     dateFormat.format(DateTime.parse(
                         dataIndonesia['update']['penambahan']['tanggal'])),
                 style: TextStyle(
@@ -344,11 +344,11 @@ class _HomePageState extends State<HomePage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Data Global\n",
+                text: "Global Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
-                text: "Sedang memuat data mohon tunggu",
+                text: "processing, please wait a minutes",
                 style: TextStyle(
                   color: kTextLightColor,
                 ),
@@ -361,11 +361,11 @@ class _HomePageState extends State<HomePage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Data Global\n",
+                text: "Global Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
-                text: "Update pada " +
+                text: "Last update data on " +
                     dateTimeFormat.format(DateTime.parse(dataGlobal['Date'])),
                 style: TextStyle(
                   color: kTextLightColor,
@@ -397,7 +397,7 @@ class _HomePageState extends State<HomePage> {
               );
             },
             child: new Text(
-              "Diagnosa Mandiri",
+              "Self Diagnosis",
               style: new TextStyle(
                   fontSize: size.width / 20,
                   color: Colors.white,
@@ -458,7 +458,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                           ),
                           Text(
-                            "Informasi tentang Covid 19",
+                            "Information about COVID-19",
                             style: TextStyle(
                               fontSize: size.width / subheader,
                               color: Color(0xFFe7e6eb),
@@ -512,11 +512,11 @@ class _HomePageState extends State<HomePage> {
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: "Data Indonesia\n",
+                                    text: "Indonesian Data\n",
                                     style: kTitleTextstyle,
                                   ),
                                   TextSpan(
-                                    text: "Total seluruh data indonesia",
+                                    text: "Total of all Indonesian data",
                                     style: TextStyle(
                                       color: kTextLightColor,
                                     ),
@@ -535,7 +535,7 @@ class _HomePageState extends State<HomePage> {
                                 );
                               },
                               child: Text(
-                                "Lihat detail",
+                                "See details",
                                 style: TextStyle(
                                   color: kPrimaryColor,
                                   fontWeight: FontWeight.w600,
@@ -628,7 +628,7 @@ class _HomePageState extends State<HomePage> {
                               );
                             },
                             child: Text(
-                              "Lihat detail",
+                              "See details",
                               style: TextStyle(
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w600,
@@ -689,7 +689,7 @@ class _HomePageState extends State<HomePage> {
                               );
                             },
                             child: Text(
-                              "Lihat detail",
+                              "See details",
                               style: TextStyle(
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w600,
@@ -743,9 +743,9 @@ class _HomePageState extends State<HomePage> {
                     Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
-                        Text("Data Kota Tangerang", style: kTitleTextstyle),
+                        Text("Tangerang City Data", style: kTitleTextstyle),
                         Text(
-                          "Kini tersedia rincian data kota tangerang",
+                          "Available data of the city of Tangerang",
                           style: TextStyle(
                             color: kTextLightColor,
                           ),
@@ -762,7 +762,7 @@ class _HomePageState extends State<HomePage> {
                               );
                             },
                             child: Text(
-                              "Lihat detail",
+                              "See details",
                               style: TextStyle(
                                 color: kPrimaryColor,
                                 fontWeight: FontWeight.w600,
@@ -781,20 +781,20 @@ class _HomePageState extends State<HomePage> {
             Container(
               padding: EdgeInsets.only(top: 10),
               alignment: Alignment(0.0, 0.0),
-              child: Text("Tips Pencegahan", style: kTitleTextstyle),
+              child: Text("Prevention Tips", style: kTitleTextstyle),
             ),
 
             PreventCard(
               text:
-                  "Selalu gunakan masker saat anda akan keluar rumah, cukup gunakan masker kain untuk membantu mengurangi penggunaan masker tenaga medis.",
+                  "Always use a mask when you are going out, just use a cloth mask to help reduce the use of medical masks.",
               image: "assets/images/home/wear_mask.png",
-              title: "Selalu Gunakan Masker",
+              title: "Always Use a Mask",
             ),
             PreventCard(
               text:
-                  "Selalu cuci tangan anda dengan sabun saat anda sebelum ataupun sesudah keluar rumah, gunakan sabun mandi atau handsanitizer untuk membasmi virus COVID-19.",
+                  "Always wash your hands with soap when you are before or after leaving the house, use bath soap or handsanitizer to eradicate the COVID-19 virus.",
               image: "assets/images/home/wash_hands.png",
-              title: "Selalu Cuci Tangan",
+              title: "Always Wash Your Hands",
             ),
             SizedBox(height: (size.width / 8) + 20),
           ],

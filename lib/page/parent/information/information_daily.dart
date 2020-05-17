@@ -80,22 +80,22 @@ class _InformationDailyPageState extends State<InformationDailyPage> {
             Counter(
               color: kInfectedColor,
               number: dataIndonesia['update']['penambahan']['jumlah_positif'],
-              title: "Positif",
+              title: "Infected",
             ),
             Counter(
               color: kDeathColor,
               number: dataIndonesia['update']['penambahan']['jumlah_meninggal'],
-              title: "Meninggal",
+              title: "Died",
             ),
             Counter(
               color: kCarecolor,
               number: dataIndonesia['update']['penambahan']['jumlah_dirawat'],
-              title: "Dirawat",
+              title: "Treated",
             ),
             Counter(
               color: kRecovercolor,
               number: dataIndonesia['update']['penambahan']['jumlah_sembuh'],
-              title: "Sembuh",
+              title: "Recovered",
             ),
           ],
         );
@@ -108,11 +108,11 @@ class _InformationDailyPageState extends State<InformationDailyPage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Harian Indonesia\n",
+                text: "Daily Indonesian Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
-                text: "Sedang memuat data mohon tunggu",
+                text: "processing, please wait a minutes",
                 style: TextStyle(
                   color: kTextLightColor,
                 ),
@@ -125,11 +125,11 @@ class _InformationDailyPageState extends State<InformationDailyPage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Harian Indonesia\n",
+                text: "Daily Indonesian Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
-                text: "Penambahan terakhir pada " +
+                text: "Adding the latest data on " +
                     dateFormat.format(DateTime.parse(
                         dataIndonesia['update']['penambahan']['tanggal'])),
                 style: TextStyle(
@@ -182,16 +182,16 @@ class _InformationDailyPageState extends State<InformationDailyPage> {
                   Text(dateFormat.format(DateTime.parse(date)),
                       overflow: TextOverflow.ellipsis, style: kTitleTextstyle),
                   Text(
-                    "Sembuh " +
+                    "Recovered " +
                         (numFormatter.format(sembuh)).toString() +
-                        " dan Dirawat " +
+                        " and Treated " +
                         (numFormatter.format(dirawat)).toString(),
                     style: TextStyle(
                       color: kInfectedColor,
                     ),
                   ),
                   Text(
-                    "Meninggal " + (numFormatter.format(meninggal)).toString(),
+                    "Died " + (numFormatter.format(meninggal)).toString(),
                     style: TextStyle(
                       color: kInfectedColor,
                     ),
@@ -199,7 +199,7 @@ class _InformationDailyPageState extends State<InformationDailyPage> {
                   Container(
                     margin: EdgeInsets.only(top: 5),
                     child: Text(
-                      "Total Positif " +
+                      "Total Infected " +
                           (numFormatter.format(positif)).toString(),
                       style: TextStyle(
                         color: kPrimaryColor,

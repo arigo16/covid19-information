@@ -88,16 +88,16 @@ class _InformasionTangerangPageState extends State<InformasionTangerangPage> {
                   Text(kelurahan,
                       overflow: TextOverflow.ellipsis, style: kTitleTextstyle),
                   Text(
-                    "Sembuh " +
+                    "Recovered " +
                         (numFormatter.format(sembuh)).toString() +
-                        " dan Masih Aktif " +
+                        " and Infected " +
                         (numFormatter.format(aktif)).toString(),
                     style: TextStyle(
                       color: kInfectedColor,
                     ),
                   ),
                   Text(
-                    "Meninggal " + (numFormatter.format(meninggal)).toString(),
+                    "Died " + (numFormatter.format(meninggal)).toString(),
                     style: TextStyle(
                       color: kInfectedColor,
                     ),
@@ -105,7 +105,7 @@ class _InformasionTangerangPageState extends State<InformasionTangerangPage> {
                   Container(
                     margin: EdgeInsets.only(top: 5),
                     child: Text(
-                      "Total Positif " +
+                      "Total Cases " +
                           (numFormatter.format(positif)).toString(),
                       style: TextStyle(
                         color: kPrimaryColor,
