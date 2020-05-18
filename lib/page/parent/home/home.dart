@@ -321,7 +321,7 @@ class _HomePageState extends State<HomePage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Daily Indonesian Data\n",
+                text: "Daily Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
