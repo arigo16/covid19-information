@@ -267,11 +267,11 @@ class _InformationIndonesiaPageState extends State<InformationIndonesiaPage> {
                                     text: TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: "Indonesian Data\n",
+                                          text: "Data Accumulation\n",
                                           style: kTitleTextstyle,
                                         ),
                                         TextSpan(
-                                          text: "Total of all Indonesian data",
+                                          text: "Total of Data Accumulation",
                                           style: TextStyle(
                                             color: kTextLightColor,
                                           ),

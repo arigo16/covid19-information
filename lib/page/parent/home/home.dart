@@ -304,7 +304,7 @@ class _HomePageState extends State<HomePage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Daily Indonesian Data\n",
+                text: "Daily Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
@@ -512,11 +512,11 @@ class _HomePageState extends State<HomePage> {
                               text: TextSpan(
                                 children: [
                                   TextSpan(
-                                    text: "Indonesian Data\n",
+                                    text: "Data Accumulation\n",
                                     style: kTitleTextstyle,
                                   ),
                                   TextSpan(
-                                    text: "Total of all Indonesian data",
+                                    text: "Total of Data Accumulation",
                                     style: TextStyle(
                                       color: kTextLightColor,
                                     ),

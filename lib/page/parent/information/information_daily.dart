@@ -108,7 +108,7 @@ class _InformationDailyPageState extends State<InformationDailyPage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Daily Indonesian Data\n",
+                text: "Daily Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
@@ -125,7 +125,7 @@ class _InformationDailyPageState extends State<InformationDailyPage> {
           text: TextSpan(
             children: [
               TextSpan(
-                text: "Daily Indonesian Data\n",
+                text: "Daily Data\n",
                 style: kTitleTextstyle,
               ),
               TextSpan(
